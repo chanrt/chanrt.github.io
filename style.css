@@ -1,5 +1,6 @@
 body {
     background: #071720;
+    color: white;
 }
 
 #main-heading {
@@ -7,4 +8,16 @@ body {
     text-align: center;
     margin-top: 0px;
     padding: 10px;
+}
+
+a {
+  color: #9999ff;
+}
+
+h3 {
+  color: white;
+}
+
+h4 {
+  color: white;
 }
