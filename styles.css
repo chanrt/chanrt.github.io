@@ -30,6 +30,11 @@ nav li a:hover {
     padding: 5px;
 }
 
+.code {
+    font-family: monospace;
+    text-align: center;
+}
+
 footer {
     background: #333333;
 }
