@@ -1,0 +1,38 @@
+:root {
+    --color-background: #222222;
+    --color-font: #f6f1d1;
+    --color-card: #14213d;
+    --color-button: #1f31ff;
+}
+
+body {
+    font-family: 'Comic Sans MS', cursive;
+    color: var(--color-font);
+    background-color: var(--color-background);
+}
+
+a:hover {
+    color: var(--color-button);
+}
+
+ul li {
+    font-size: 1.5rem;
+}
+
+.btn {
+    background-color: var(--color-button);
+}
+
+.btn:hover {
+    background-color: #3b1070;
+}
+
+.card {
+    border: 1px solid white;
+    background-color: var(--color-card);
+}
+
+.card-content {
+    padding: 15px !important;
+    margin: 0;
+}
