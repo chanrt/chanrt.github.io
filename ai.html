@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <title>AI projects | Chandan Relekar</title>
+    <meta name="description" content="A showcase of my projects and hobbies">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="chandan relekar, chandan r t, chandan relekar thukaram">
+
+    <!-- Materialize -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XBH96E5V16"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-XBH96E5V16');
+    </script>
+</head>
+
+<body class="flow-text">
+    <nav>
+        <div class="nav-wrapper">
+            <ul id="nav-mobile" class="right">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="simulations.html">Simulations</a></li>
+                <li><a href="gamedev.html">Game Dev</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>AI Projects</h1>
+        <p>
+            As far as AI is concerned, I'm mostly interested in their creative applications. For example: game-playing
+            AI, metahuristic optimizaton, using pre-trained models for innovative purposes, etc. I haven't explored much
+            of main-stream AI/ML.
+        </p>
+        <div class="row">
+            <div class="col s12">
+                <center>
+                    <h2>Chess AI</h2>
+                </center>
+                <img class="responsive-img" src="img/ai/chess_ai.jpeg">
+                <p>
+                    I used minimax algorithm to implement chess AI in Python, using PyGame for graphics. Minimax
+                    algorithm requires an evaluation function, which takes in the state of the board and outputs a score
+                    that conveys which player is winning and by what extent. I implemented a simple evaluation function
+                    which considers just positional and material advantages. Minimax algorithm assumes that each player
+                    will try to maximize their own evaluation, and outputs the best possible move by looking ahead a
+                    certain number of steps. I incorporated multiprocessing after the first move to speed up the
+                    process. Currently, only 3-4 moves can be looked ahead, although this number can be increased via
+                    optimizations like alpha-beta pruning. You can find the repository <a
+                        href="https://github.com/chanrt/chess-ai" target="_blank">here</a>.
+                </p>
+            </div>
+            <div class="col s12">
+                <center>
+                    <h2>Genetic Algorithm</h2>
+                </center>
+                <div class="col s12 l6">
+                    <img class="responsive-img" src="img/ai/genetic.png">
+                </div>
+                <div class="col s12 l6">
+                    <p>
+                        What if we can use the principles of evolution to solve optimization problems? Genetic algorithm
+                        is a metaheuristic optimization method which uses mutation and recombination in order to
+                        maximize fitness of a population of genes towards a given problem. I considered a very abstract
+                        problem: guiding a bunch of blind entities from point A to point B, whilst avoiding collision
+                        with walls and obstacles. You can access the simulation <a
+                            href="https://visualize-it.github.io/natural_selection/simulation.html"
+                            target="_blank">here</a>.
+                    </p>
+                </div>
+            </div>
+            <hr>
+            <div class="col s12">
+                <center>
+                    <h2>Image Segmentation and Optical Character Recognition</h2>
+                </center>
+                <div class="col s12">
+                    <img class="responsive-img" src="img/ai/ocr.png">
+                    <p>
+                        I implemented an entire pipeline which takes in an image and infers all the text present in it.
+                        This process is composed of several steps:
+                    <ol>
+                        <b>Image preprocessing:</b> A color image or a grayscale image needs to be converted into a
+                        binary image. This is acheived via adaptive thresholding. Any skew/rotation in the image is
+                        fixed maximizing the intra-class variance of the row histogram.
+                        <br>
+                        <b>Image segmentation:</b> All paragraphs in the image need to be broken down into lines, all
+                        lines into words, and all words into letters. This is again achieved by histogramming. This
+                        model cannot deal with cursive letters yet. The main aim was to read printed-text, which was
+                        easily achieved with high accuracy.
+                        <br>
+                        <b>Character preprocessing:</b> This just involves resizing the character into a square frame
+                        with adequate margin space, followed by skeletonization if necessary.
+                        <br>
+                        <b>Character recognition:</b> I trained 4 models: a DNN model and a CNN model on hand-written
+                        text and printed-text. The character is fed into the trained neural network, and all the
+                        probabilities are recorded. The character with the highest probability is initially chosen.
+                        <br>
+                        <b>Post-processing:</b> This involves doing spell-correction, replacing numbers with letter when
+                        numbers don't make sense, etc. Integration an NLP model here would be useful. Post-processing
+                        also involves computing a metric called Levenstein distance, which is later used to calculate
+                        the accuracy of the entire pipeline.
+                    </ol>
+                    As is expected, the CNN model trained on printed characters had highest accuracy. You can find the
+                    repository <a href="https://github.com/chanrt/image-segmentation-ocr" target="_blank">here</a>.
+                    </p>
+                </div>
+            </div>
+            <div class="col s12">
+                <center>
+                    <h2>Game Dev + Computer Vision</h2>
+                </center>
+                <div class="col s12">
+                    <img class="responsive-img" src="img/ai/infinity_run.png">
+                    <p>
+                        I initially made a simplified, procedural, obstacle avoidance game called Infinity Run. I used a
+                        method called ray-casting in order to figure out how close the walls are on all angles, and
+                        accordingly render the height of the walls. At this point, I realised that I could integrate a
+                        pre-trained model for hand-detection, and thereby allow the player to control the character (go
+                        left/go right) by giving input into the webcam! For this purpose, I used a model from mediapipe
+                        (Google). The framerate is a bit low because the inference takes time, and my laptop isn't
+                        top-notch. You can find the repository <a href="https://github.com/chanrt/infinity-run"
+                            target="_blank">here</a>. You can watch a video of me playing the game <a
+                            href="https://www.youtube.com/watch?v=1_NdY0oB8hQ&feature=youtu.be"
+                            target="_blank">here</a>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="page-footer" style="background: #333333;">
+        <div class="container">
+            <div class="row" style="padding: 0px; margin: 0px">
+                <div class="col s6 l6 center">
+                    <h5>Links</h5>
+                    <ul>
+                        <li><a href="https://www.github.com/chanrt" target="_blank">GitHub</a></li>
+                        <li><a href="https://www.linkedin.com/in/chandan-relekar-738b331b7/"
+                                target="_blank">LinkedIn</a></li>
+                        <li><a href="https://chanrt.itch.io/" target="_blank">Itch.io</a></li>
+                    </ul>
+                </div>
+                <div class="col s6 l6 center">
+                    <h5>Contact</h5>
+                    <ul>
+                        <li><a href="mailto: chandan.relekar@gmail.com" target="_blank">Email</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        AOS.init();
+    </script>
+
+</body>
+
+</html>
