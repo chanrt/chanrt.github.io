@@ -11,6 +11,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+        </script>
+
     <!-- Stylesheet -->
     <link rel="stylesheet" href="styles.css">
 
@@ -234,6 +238,57 @@
                 </div>
                 <br>
             </center>
+        </div>
+
+        <div>
+            <h2>Music Theory</h2>
+            <p>
+                I'm always irked by how music theory is taught incorrectly (or not taught at all). So here is my attempt
+                to make it as simple as possible to the common man.
+                <br> <br>
+                The widely-used notation involves the keys: C, D, E, F, G, A and B. All these keys except E have a sharp
+                key (C#, D#, F#, G#, A#). These 12 keys make up an octave. It has been agreed that the A key of the 4th
+                octave (referred to as A4) should have a frequency of 440 Hz (440 vibrations per second). This is true
+                of all musical instruments (that I know of). The only factor that separates A4 of piano from A4 of any
+                other instrument is the secondary character of these vibrations (also called timbre). A4 is also the
+                48th key (since the first key is A1).
+                <br> <br>
+                Frequency is an objective quality whereas pitch is subjective. The relationship between the two is
+                non-linear. A successive doubling of frequency is perceived as a linear increase in pitch. Hence, A4 is
+                440 Hz, A5 is 880 Hz, A6 is 1780 Hz, and so on. In order to maintain this linear increase in pitch
+                between the keys from A4 to A5, the frequency increases by a factor of \(2^{\frac{1}{12}}\) for each
+                key. Hence, the frequency of the \(n^{th}\) key is given by:
+                \[ f(n) = 440 \times 2^{\frac{n - 48}{12}} \ Hz \]
+                That's it. Everything beyond this is just notation and semantics. Certain notes sound good when played
+                together because the ratio between their frequencies is something like 1.5 or 1.33. On the other hand,
+                some notes sound terrible when played together because the ratio between their frequencies is an
+                irrational number like \(\sqrt{2}\). Now lets see how much of music theory I can speedrun:
+            </p>
+            <ol>
+                <li>Those 12 keys in an octave are called a chromatic scale. The interval between two consecutive notes
+                    is called a semitone. The mode of assigning frequencies to them is called 12-equal temperament.
+                    There are other variations too</li>
+                <li>The most popular progression of notes, called the major scale, is composed of 7 notes obtained by
+                    starting from a specific key and then followed by 2 full steps (2 notes), 1 half step (1 note), 3
+                    full steps and 1 half step. For example, in C major scale, the first key we start from is
+                    C<sub>n</sub> and we end up at C<sub>n+1</sub>. There are many other scales, and they evoke
+                    different kinds of emotions</li>
+                <li>A pair of notes that feel "good" being played together (owing to an integer ratio between their
+                    frequencies) are said to be consonant. Otherwise, they're dissonant</li>
+                <li>A melody refers to a bunch of notes that sound "good" when played in succession. A harmony refers to
+                    a succession of notes and chords</li>
+                <li>A chord is a collection of three or more notes that are either played together or broken (like in
+                    arpeggios). There are strict rules regarding they are constructed. For example, the C major chord is
+                    composed of the root (C), the third note in its scale (E) and the fifth note in its scale (G). Once
+                    again, the way how a chord "feels" comes down to the ratio of the frequencies of its notes</li>
+                <li>The rhythm lays down how successions are ordered throughout the composition. The dynamics dictates
+                    the variation in relative amplitude of successive notes. Articulation is about how much each note's
+                    sound attacks into the next note. Cadence is the extent to which notes are played with the right
+                    rhythm, dynamics and articulation.</li>
+                <li>Sheet music/musical notation is a handy way to convey all of this information in a succinct manner,
+                    independent of instrument.</li>
+            </ol>
+            <br>
         </div>
     </div>
 
